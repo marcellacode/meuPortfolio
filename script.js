@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTopButton = document.querySelector('.back-to-top');
 
     function toggleBackToTopButton() {
-        // Se o usuário rolou mais de 400px para baixo
+        
         if (window.scrollY > 400) {
-            // Adiciona a classe 'show' para tornar o botão visível
+            
             backToTopButton.classList.add('show');
         } else {
-            // Remove a classe para esconder o botão
+            
             backToTopButton.classList.remove('show');
         }
     }
