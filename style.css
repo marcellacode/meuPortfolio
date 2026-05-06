@@ -384,8 +384,8 @@ header {
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: var(--glass-highlight), 0 10px 24px rgba(199, 138, 165, 0.14);
-  opacity: 0;
-  transform: translateY(26px);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .habilidade-card:hover {
@@ -424,8 +424,8 @@ header {
   -webkit-backdrop-filter: blur(18px) saturate(135%);
   color: #694659;
   box-shadow: var(--glass-highlight), 0 10px 24px rgba(199, 138, 165, 0.14);
-  opacity: 0;
-  transform: translateY(22px);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .contato-item i {
@@ -499,14 +499,29 @@ footer {
 }
 
 .reveal-up {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .revealed {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.js-ready .reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.js-ready .habilidade-card {
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+.js-ready .contato-item {
+  opacity: 0;
+  transform: translateY(22px);
 }
 
 @keyframes slideDown {

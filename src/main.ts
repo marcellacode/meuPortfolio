@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js-ready');
+
 const sections = document.querySelectorAll<HTMLElement>('section[id]');
 const backToTopButton = document.querySelector<HTMLElement>('.back-to-top');
 const revealElements = document.querySelectorAll<HTMLElement>('.reveal-up, .habilidade-card, .contato-item, .info-card, .timeline-item, .chips span, .links-list a');
