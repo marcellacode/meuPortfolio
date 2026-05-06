@@ -8,6 +8,9 @@
   --primary-strong: #d86d99;
   --line-color: #f4dbe8;
   --shadow-soft: 0 12px 30px rgba(216, 109, 153, 0.12);
+  --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 244, 250, 0.32));
+  --glass-border: 1px solid rgba(255, 255, 255, 0.65);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 * {
@@ -24,7 +27,7 @@ html {
 body {
   background: radial-gradient(circle at top right, #ffe6f1 0%, #fff8fc 45%, #fffdfd 100%);
   color: var(--text-color);
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
 }
 
@@ -60,7 +63,7 @@ section {
 
 h2 {
   font-size: clamp(2rem, 4vw, 2.8rem);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   text-align: center;
   margin-bottom: 60px;
@@ -89,16 +92,17 @@ header {
   gap: 28px;
   padding: 16px 30px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--line-color);
-  box-shadow: 0 10px 24px rgba(219, 144, 177, 0.14);
+  background: var(--glass-bg);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: var(--glass-border);
+  box-shadow: var(--glass-highlight), 0 14px 34px rgba(219, 144, 177, 0.2);
   animation: slideDown 0.7s ease both;
 }
 
 .brand {
   margin-right: auto;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.15rem;
   color: var(--primary-strong);
 }
@@ -153,7 +157,7 @@ header {
 .home-text h1 {
   font-size: clamp(2.6rem, 6vw, 4.2rem);
   line-height: 1.15;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   color: #5c3247;
 }
 
@@ -207,8 +211,11 @@ header {
 #sobre,
 #habilidades,
 #contato {
-  background-color: rgba(255, 255, 255, 0.65);
-  border-top: 1px solid rgba(247, 220, 233, 0.8);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45), rgba(255, 241, 248, 0.25));
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-top: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
 }
 
 #sobre {
@@ -246,13 +253,15 @@ header {
 }
 
 .habilidade-card {
-  background-color: var(--surface-color);
-  border: 1px solid var(--line-color);
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  border: var(--glass-border);
   border-radius: 18px;
   padding: 28px 18px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 10px 24px rgba(199, 138, 165, 0.08);
+  box-shadow: var(--glass-highlight), 0 10px 24px rgba(199, 138, 165, 0.14);
   opacity: 0;
   transform: translateY(26px);
 }
@@ -285,10 +294,13 @@ header {
   align-items: center;
   gap: 0.9rem;
   padding: 16px 18px;
-  border: 1px solid var(--line-color);
+  border: var(--glass-border);
   border-radius: 14px;
-  background-color: var(--surface-color);
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
   color: #694659;
+  box-shadow: var(--glass-highlight), 0 10px 24px rgba(199, 138, 165, 0.14);
   opacity: 0;
   transform: translateY(22px);
 }
@@ -306,7 +318,7 @@ footer {
 }
 
 .footer-content h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
   color: #6c3b52;
   font-weight: 700;
@@ -336,12 +348,15 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(120deg, var(--primary-color), var(--primary-strong));
-  color: #fff;
+  background: linear-gradient(135deg, rgba(238, 136, 179, 0.55), rgba(214, 108, 152, 0.42));
+  color: #fffdfd;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px) saturate(155%);
+  -webkit-backdrop-filter: blur(18px) saturate(155%);
   opacity: 0;
   visibility: hidden;
   transform: translateY(15px);
-  box-shadow: 0 14px 24px rgba(216, 109, 153, 0.28);
+  box-shadow: var(--glass-highlight), 0 14px 24px rgba(216, 109, 153, 0.28);
   transition: all 0.35s ease;
 }
 
