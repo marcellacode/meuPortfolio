@@ -17,6 +17,10 @@
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-padding-top: 110px;
+}
+
 body {
   background: radial-gradient(circle at top right, #ffe6f1 0%, #fff8fc 45%, #fffdfd 100%);
   color: var(--text-color);
@@ -51,6 +55,7 @@ body::after {
 
 section {
   padding: 110px 8% 90px;
+  scroll-margin-top: 110px;
 }
 
 h2 {
@@ -88,6 +93,7 @@ header {
   backdrop-filter: blur(10px);
   border: 1px solid var(--line-color);
   box-shadow: 0 10px 24px rgba(219, 144, 177, 0.14);
+  animation: slideDown 0.7s ease both;
 }
 
 .brand {
@@ -151,6 +157,20 @@ header {
   color: #5c3247;
 }
 
+.home-kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary-strong);
+  background-color: #fff0f7;
+  border: 1px solid #f2cce0;
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
 .home-text p {
   font-size: 1.15rem;
   color: var(--text-muted);
@@ -181,6 +201,7 @@ header {
   object-fit: cover;
   border: 7px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 20px 40px rgba(201, 120, 153, 0.2);
+  animation: morphFloat 7s ease-in-out infinite;
 }
 
 #sobre,
@@ -232,6 +253,8 @@ header {
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 10px 24px rgba(199, 138, 165, 0.08);
+  opacity: 0;
+  transform: translateY(26px);
 }
 
 .habilidade-card:hover {
@@ -266,6 +289,8 @@ header {
   border-radius: 14px;
   background-color: var(--surface-color);
   color: #694659;
+  opacity: 0;
+  transform: translateY(22px);
 }
 
 .contato-item i {
@@ -326,6 +351,40 @@ footer {
   transform: translateY(0);
 }
 
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes morphFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0.3deg);
+    border-radius: 34% 66% 63% 37% / 38% 38% 62% 62%;
+  }
+  50% {
+    transform: translateY(-10px) rotate(-0.4deg);
+    border-radius: 59% 41% 42% 58% / 46% 62% 38% 54%;
+  }
+}
+
 @media (max-width: 992px) {
   #home {
     flex-direction: column-reverse;
@@ -367,6 +426,10 @@ footer {
     width: 100%;
     text-align: center;
     margin-right: 0;
+  }
+
+  .home-kicker {
+    font-size: 0.72rem;
   }
 
   .home-text p {
